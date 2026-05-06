@@ -40,6 +40,7 @@ Oder direkt unter [og1o.com](https://www.og1o.com) aufrufen.
 | Hermes      | Hermes Logo           |
 | Risk.Ident  | Risk Ident Logo       |
 | OTTO        | OTTO Logo             |
+| mindline    | mindline Logo         |
 | Eigenes     | URL oder Datei-Upload |
 
 ## Tech Stack
