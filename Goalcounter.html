@@ -59,9 +59,9 @@ body{height:100vh;display:flex;flex-direction:column;font-family:Arial,sans-seri
 </head>
 <body>
 <div id="sb">
-  <button id="tt" onclick="toggleTimer()">▶ Start</button>
+  <div style="flex:1"><button id="tt" onclick="toggleTimer()">▶ Start</button></div>
   <div style="text-align:center"><div id="timer">00:00</div><div id="ri">Paarung 1 von 3</div></div>
-  <div style="width:60px"></div>
+  <div style="flex:1"></div>
 </div>
 <button id="undo" onclick="undoGoal()">↩️ Rückgängig</button>
 <div id="ga">
@@ -121,9 +121,9 @@ function updDots(){[1,2].forEach(t=>{const el=$('d'+t);const bg=t===1?t1bg:t2c;c
 function updLog(){const c=$('lge');c.innerHTML='';log.slice().reverse().forEach(e=>{const d=document.createElement('div');d.className='le '+(e.t===1?'t1g':'t2g');d.innerHTML='<span>⚽ '+gn(e.t)+'</span><span>'+e.s1+':'+e.s2+'</span><span>'+e.time+'</span>';c.appendChild(d);});}
 function updUndo(){$('undo').style.display=log.length?'block':'none';}
 function addGoal(t){if(over||ovs.some(id=>$(id).classList.contains('show')))return;startTimer();sc[t-1]++;log.push({t,s1:sc[0],s2:sc[1],time:getTime(),round,nm});$('s'+t).textContent=sc[t-1];updDots();updLog();updUndo();if(sc[t-1]>=21){showWinner(t);return;}if(sc[t-1]===nm&&round<3){round++;nm=nm===7?14:21;showRound(t,sc[t-1]);}}
-function undoGoal(){if(!log.length)return;over=false;const l=log.pop();sc[l.t-1]--;round=l.round;nm=l.nm;$('s'+l.t).textContent=sc[l.t-1];$('ri').textContent='Paarung '+round+' von 3';ovs.forEach(id=>$(id).classList.remove('show'));updDots();updLog();updUndo();}
-function showRound(t,ms){$('rt').textContent='🔄 Paarungswechsel!';$('rs').textContent=gn(t)+' hat '+ms+' Tore – Paarung '+round+' beginnt!';$('rsc').textContent='Stand: '+sc[0]+':'+sc[1];$('ri').textContent='Paarung '+round+' von 3';$('ro').classList.add('show');}
-function dismissRound(){$('ro').classList.remove('show');}
+function undoGoal(){if(!log.length)return;over=false;const l=log.pop();sc[l.t-1]--;round=l.round;nm=l.nm;$('s'+l.t).textContent=sc[l.t-1];$('ri').textContent='Paarung '+round+' von 3';ovs.forEach(id=>$(id).classList.remove('show'));updDots();updLog();updUndo();startTimer();}
+function showRound(t,ms){if(running)toggleTimer();$('rt').textContent='🔄 Paarungswechsel!';$('rs').textContent=gn(t)+' hat '+ms+' Tore – Paarung '+round+' beginnt!';$('rsc').textContent='Stand: '+sc[0]+':'+sc[1];$('ri').textContent='Paarung '+round+' von 3';$('ro').classList.add('show');}
+function dismissRound(){$('ro').classList.remove('show');startTimer();}
 function showWinner(t){if(running)toggleTimer();over=true;$('wt').textContent='🏆 '+gn(t)+' gewinnt!';$('ws').textContent='Endstand: '+sc[0]+':'+sc[1];$('wti').textContent='⏱ '+getTime();$('wo').classList.add('show');}
 function dismissWinner(){$('wo').classList.remove('show');$('lgp').style.display='block';updLog();}
 function toggleLog(){const p=$('lgp');p.style.display=p.style.display==='block'?'none':'block';}
