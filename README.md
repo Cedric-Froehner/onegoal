@@ -16,10 +16,10 @@ Ein mobiler Torstand-Zähler für Tischkicker im **Race-to-21-Modus** – optimi
 
 ## Verwendung
 
-Einfach `Goalcounter.html` im Browser öffnen – keine Installation, kein Build-Schritt, keine Abhängigkeiten.
+Einfach `index.html` im Browser öffnen – keine Installation, kein Build-Schritt, keine Abhängigkeiten.
 
 ```
-open Goalcounter.html
+open index.html
 ```
 
 Oder direkt unter [og1o.com](https://www.og1o.com) aufrufen.
