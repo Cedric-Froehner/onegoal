@@ -1,0 +1,46 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{height:100vh;display:flex;flex-direction:column;font-family:Arial,sans-serif;user-select:none;overflow:hidden;background:#1a1a2e;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#sb{display:flex;justify-content:space-between;align-items:center;padding:calc(8px + env(safe-area-inset-top)) 16px 8px;background:#1a1a2e;color:white;font-size:.85rem}
+#timer{font-size:1.1rem;font-weight:bold;letter-spacing:2px}
+#tt{background:rgba(255,255,255,.2);border:none;color:white;border-radius:12px;padding:4px 10px;font-size:.8rem;cursor:pointer}
+#ga{display:flex;flex:1}
+.team{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer}
+.team:active{filter:brightness(.85)}
+#t1{background:#434098;color:white}
+#t2{background:#e74c3c;color:white}
+.tn{font-size:1.4rem;font-weight:bold;margin-bottom:12px;opacity:.85;min-height:60px;display:flex;align-items:center;justify-content:center}
+.sc{font-size:22vw;font-weight:bold;line-height:1}
+.hi{font-size:.75rem;margin-top:6px;margin-bottom:10px;opacity:.6}
+.logo{width:130px;height:60px;max-height:60px;object-fit:contain;margin-bottom:12px;pointer-events:none}
+.rows{display:flex;flex-direction:column;gap:5px;align-items:center}
+.pr{display:flex;gap:4px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,.2)}
+.dot.scored{background:rgba(0,0,0,.7)}
+#t1 .dot{background:rgba(255,255,255,.3)}
+#t1 .dot.scored{background:rgba(255,255,255,.95)}
+.fxb{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));background:rgba(0,0,0,.5);color:white;border:none;border-radius:20px;padding:8px 14px;font-size:.9rem;cursor:pointer;z-index:10}
+#stg{left:calc(16px + env(safe-area-inset-left))}
+#rst{left:50%;transform:translateX(-50%)}
+#lgt{right:calc(16px + env(safe-area-inset-right))}
+#undo{position:fixed;top:calc(12px + env(safe-area-inset-top));right:calc(16px + env(safe-area-inset-right));background:rgba(0,0,0,.5);color:white;border:none;border-radius:20px;padding:5px 12px;font-size:.8rem;cursor:pointer;z-index:110;display:none}
+#lgp{display:none;position:fixed;bottom:calc(55px + env(safe-area-inset-bottom));right:calc(16px + env(safe-area-inset-right));width:220px;max-height:280px;overflow-y:auto;background:rgba(20,20,40,.95);color:white;border-radius:12px;padding:12px;font-size:.8rem;z-index:20}
+#lgp h3{margin-bottom:8px;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:4px}
+.le{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.t1g{color:#a89dff}.t2g{color:#ff8a80}
+.ov{display:none;position:fixed;inset:0;color:white;flex-direction:column;align-items:center;justify-content:center;z-index:100;text-align:center;gap:8px;padding:20px;overflow-y:auto}
+.ov.show{display:flex}
+#wo{background:rgba(0,0,0,.85)}
+#ro{background:rgba(0,0,0,.75)}
+#so{background:rgba(0,0,0,.92)}
+.ov h1{font-size:2.5rem}.ov h2{font-size:1.8rem}.ov p{font-size:1rem;opacity:.8}
+.ov button{margin-top:6px;padding:10px 24px;border:none;border-radius:24px;background:white;color:#1a1a2e;font-size:1rem;font-weight:bold;cursor:pointer}
+.obtn{background:rgba(255,255,255,.2)!important;color:white!important}
+.ov label{font-size:.85rem;opacity:.8;display:block;margin-top:10px;margin-bottom:3px}
+.ov input[type=text]{width:200px;padding:8px 12px;border-radius:12px;border:none;font-size:.9rem;text-align:center}
+.crow{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.cbtn{width:28px;height:28px;border-radius:50%;border:3px solid transparent;cursor:pointer}
+.cbtn.sel{border-color:white}
+.tbtn{background:rgba(255,255,255,.15);border:2px solid transparent;color:white;border-radius:10px;padding:5px 9px;font-size:.8rem;cursor:pointer;margin:2px}
+.tbtn.sel{border-color:white;background:rgba(255,255,255,.3)}
+#curl{width:210px;padding:6px 10px;border-radius:10px;border:none;font-size:.8rem;text-align:center;margin-top:4px}
+#cw{display:none}
