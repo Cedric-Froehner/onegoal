@@ -54,3 +54,7 @@ body{height:100vh;display:flex;flex-direction:column;font-family:Arial,sans-seri
 .sld:before{content:'';position:absolute;height:22px;width:22px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
 .sw input:checked+.sld{background:#2ecc71}
 .sw input:checked+.sld:before{transform:translateX(24px)}
+#kball{position:absolute;font-size:2.2rem;line-height:1;z-index:4;transform:translate(-50%,-50%);transition:left .5s cubic-bezier(.4,0,.2,1),top .5s cubic-bezier(.4,0,.2,1);pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+#kball.clickable{pointer-events:all;cursor:pointer;animation:kbpulse 1.4s ease-in-out infinite}
+@keyframes kbpulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}
+.notransition{transition:none!important}
