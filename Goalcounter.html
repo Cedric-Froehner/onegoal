@@ -69,7 +69,7 @@ if ('serviceWorker' in navigator) {
         console.warn('Service Worker registration failed:', err);
       });
     } else {
-      console.info('Service Worker skipped: secure context (HTTPS/localhost) required.');
+      console.info('Service Worker skipped: secure context (HTTPS/localhost/127.0.0.1) required.');
     }
   });
 }

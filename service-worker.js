@@ -37,7 +37,10 @@ self.addEventListener('fetch', event => {
             return response;
           }
           const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone)).catch(() => {});
+          caches
+            .open(CACHE_NAME)
+            .then(cache => cache.put(event.request, clone))
+            .catch(err => console.warn('Cache write failed:', err));
           return response;
         })
         .catch(() => (isNavigation ? caches.match(FALLBACK_PAGE) : Response.error()));
