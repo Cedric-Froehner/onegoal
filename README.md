@@ -5,6 +5,7 @@ Ein mobiler Torstand-Zähler für Tischkicker im **Race-to-21-Modus** – optimi
 ## Features
 
 - **Race to 21** – Zählt Tore bis 21, aufgeteilt in 3 Paarungen (Milestone bei 7, 14 und 21 Toren)
+- **Spielphase-Switch** – Vorrunde (Unentschieden bei 20:20 möglich) oder KO-Phase (mind. 21 Tore und 2 Tore Vorsprung)
 - **Zwei Teams** – Heimteam (one.O) und Gastteam frei konfigurierbar
 - **Timer** – Stoppuhr mit Start/Pause, startet automatisch beim ersten Tor
 - **Dot-Anzeige** – Visuelle Fortschrittsanzeige der Tore als Punkte-Raster (3 × 7)
@@ -29,7 +30,7 @@ Oder direkt unter [og1o.com](https://www.og1o.com) aufrufen.
 1. Auf den Bereich des jeweiligen Teams tippen → Tor wird gezählt
 2. Timer läuft automatisch mit
 3. Bei 7 und 14 Toren erscheint ein Paarungswechsel-Hinweis
-4. Bei 21 Toren wird der Gewinner angezeigt
+4. Je nach Spielphase endet das Spiel bei 20:20 (Vorrunde) oder mit Sieger nach den KO-Regeln
 5. „🔄 Neu starten" setzt alles zurück
 
 ## Vorkonfigurierte Teams
