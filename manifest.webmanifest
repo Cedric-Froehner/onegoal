@@ -13,12 +13,6 @@
       "src": "assets/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
-    },
-    {
-      "src": "https://www.og1o.com/_assets/625e2d6cb54141905b51c20d13baa45b/Icons/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
     }
   ]
 }

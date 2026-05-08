@@ -64,9 +64,10 @@
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-    if (window.isSecureContext || isLocalhost) {
-      navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+    if (window.isSecureContext) {
+      navigator.serviceWorker.register('./service-worker.js').catch(err => {
+        console.warn('Service Worker registration failed:', err);
+      });
     }
   });
 }
