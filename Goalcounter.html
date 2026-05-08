@@ -43,6 +43,15 @@
   <label>Farbe Heimteam</label><div class="crow" id="c1"></div>
   <label>Gastteam Name</label><input type="text" id="ni" placeholder="Team 2" maxlength="20">
   <label>Farbe Gastteam</label><div class="crow" id="c2"></div>
+  <label>Spielphase</label>
+  <div class="swrow">
+    <span>Vorrunde</span>
+    <label class="sw">
+      <input type="checkbox" id="msw">
+      <span class="sld"></span>
+    </label>
+    <span>KO-Phase</span>
+  </div>
   <button onclick="saveSettings()" style="margin-top:12px">💾 Speichern</button>
   <button class="obtn" onclick="$('so').classList.remove('show')">Abbrechen</button>
 </div>
