@@ -27,11 +27,11 @@ function addGoal(t){if(over||ovs.some(id=>$(id).classList.contains('show')))retu
 function undoGoal(){if(!log.length)return;over=false;const l=log.pop();sc[l.t-1]--;round=l.round;nm=l.nm;$('s'+l.t).textContent=sc[l.t-1];$('ri').textContent='Paarung '+round+' von 3';ovs.forEach(id=>$(id).classList.remove('show'));updDots();updLog();updUndo();saveState();startTimer();}
 function showRound(t,ms){if(running)toggleTimer();$('rt').textContent='🔄 Paarungswechsel!';$('rs').textContent=gn(t)+' hat '+ms+' Tore – Paarung '+round+' beginnt!';$('rsc').textContent='Stand: '+sc[0]+':'+sc[1];$('ri').textContent='Paarung '+round+' von 3';$('ro').classList.add('show');}
 function dismissRound(){$('ro').classList.remove('show');startTimer();}
-function checkGroupEnd(){if(sc[0]===sc[1]&&sc[0]>=20){showDraw();return true;}if(sc[0]>=21||sc[1]>=21){showWinner(sc[0]>sc[1]?1:2);return true;}return false;}
+function checkGroupEnd(){if(sc[0]===20&&sc[1]===20){showDraw();return true;}if(sc[0]===sc[1])return false;if(sc[0]>=21||sc[1]>=21){showWinner(sc[0]>sc[1]?1:2);return true;}return false;}
 function checkKoEnd(){const mx=Math.max(sc[0],sc[1]),df=Math.abs(sc[0]-sc[1]);if(mx>=21&&df>=2){showWinner(sc[0]>sc[1]?1:2);return true;}return false;}
 function checkGameEnd(){return mode==='group'?checkGroupEnd():checkKoEnd();}
 function showWinner(t){if(running)toggleTimer();over=true;$('wt').textContent='🏆 '+gn(t)+' gewinnt!';$('ws').textContent='Endstand: '+sc[0]+':'+sc[1];$('wti').textContent='⏱ '+getTime();$('wo').classList.add('show');}
-function showDraw(){if(running)toggleTimer();over=true;$('wt').textContent='🤝 Unentschieden!';$('ws').textContent='Endstand: '+sc[0]+':'+sc[1];$('wti').textContent='⏱ '+getTime();$('wo').classList.add('show');}
+function showDraw(){if(running)toggleTimer();over=true;$('wt').textContent='🤝 Unentschieden!';$('ws').textContent='Vorrunde endet mit 20:20';$('wti').textContent='⏱ '+getTime();$('wo').classList.add('show');}
 function dismissWinner(){$('wo').classList.remove('show');$('lgp').style.display='block';updLog();}
 function toggleLog(){const p=$('lgp');p.style.display=p.style.display==='block'?'none':'block';}
 function resetScores(){if(confirm('Neu starten?')){sc=[0,0];round=1;nm=7;log=[];secs=0;running=false;over=false;clearInterval(iv);releaseWakeLock();$('s1').textContent='0';$('s2').textContent='0';$('tt').textContent='▶ Start';$('ri').textContent='Paarung 1 von 3';$('timer').textContent='00:00';ovs.forEach(id=>$(id).classList.remove('show'));$('lgp').style.display='none';updDots();updLog();updUndo();saveState();}}
