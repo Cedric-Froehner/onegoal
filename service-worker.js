@@ -5,7 +5,8 @@ const ASSETS = [
   './css/style.css',
   './js/app.js',
   './manifest.webmanifest',
-  './assets/apple-touch-icon.png'
+  './assets/apple-touch-icon.png',
+  './assets/pwa-icon.svg'
 ];
 
 self.addEventListener('install', event => {
@@ -29,7 +30,7 @@ self.addEventListener('fetch', event => {
       if (cached) return cached;
       return fetch(event.request)
         .then(response => {
-          if (!response || response.status !== 200) return response;
+          if (!response || !response.ok) return response;
           const clone = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
           return response;
