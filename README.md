@@ -13,7 +13,7 @@ Ein mobiler Torstand-Zähler für Tischkicker im **Race-to-21-Modus** – optimi
 - **Rückgängig** – Letztes Tor kann per Knopfdruck korrigiert werden
 - **Teamanpassung** – Name, Farbe und Logo (URL oder Dateiupload) für beide Teams einstellbar
 - **Wake Lock** – Hält den Bildschirm während des Spiels aktiv
-- **PWA-ready** – Kann als Web-App auf dem iPhone-Homescreen installiert werden
+- **PWA-ready** – Installierbar als Web-App (inkl. Android-Vollbild via Manifest + Service Worker)
 
 ## Verwendung
 
@@ -24,6 +24,14 @@ open index.html
 ```
 
 Oder direkt unter [og1o.com](https://www.og1o.com) aufrufen.
+
+## PWA-Hinweis (Android Vollbild)
+
+Für die Installation und den Vollbildmodus unter Android müssen folgende Bedingungen erfüllt sein:
+
+- Gültiges `manifest.webmanifest`
+- Registrierter `service-worker.js`
+- Bereitstellung über **HTTPS** (oder lokal via `localhost` / `127.0.0.1` für Entwicklung)
 
 ### Spielablauf
 

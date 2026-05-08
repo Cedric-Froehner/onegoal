@@ -1,0 +1,24 @@
+{
+  "name": "one.gOal Torstand",
+  "short_name": "one.gOal",
+  "start_url": "./Goalcounter.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "lang": "de",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
