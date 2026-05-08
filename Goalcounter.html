@@ -24,6 +24,7 @@
     <div class="rows" id="d1"></div>
   </div>
   <button id="swp" onclick="swapTeams()" aria-label="Seiten tauschen" title="Seiten tauschen">⇄</button>
+  <div id="kball" onclick="kickoffClick()">⚽</div>
   <div class="team" id="t2" onclick="addGoal(2)">
     <div class="tn" id="t2n">Team 2</div>
     <div class="sc" id="s2">0</div>
@@ -31,7 +32,7 @@
     <div class="rows" id="d2"></div>
   </div>
 </div>
-<button class="fxb" id="stg" onclick="openSettings()">⚙️ Teams</button>
+<button class="fxb" id="stg" onclick="openSettings()">⚙️ Einstellungen</button>
 <button class="fxb" id="rst" onclick="resetScores()">🔄 Neu starten</button>
 <button class="fxb" id="lgt" onclick="toggleLog()">📋 Tore</button>
 <div id="lgp"><h3>⚽ Tor-Protokoll</h3><div id="lge"></div></div>
