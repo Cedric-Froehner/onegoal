@@ -26,17 +26,21 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
+  const isNavigation = event.request.mode === 'navigate';
   event.respondWith(
     caches.match(event.request).then(cached => {
       if (cached) return cached;
       return fetch(event.request)
         .then(response => {
-          if (!response || !response.ok) return response;
+          if (!response || !response.ok) {
+            if (isNavigation) return caches.match(FALLBACK_PAGE);
+            return response;
+          }
           const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone)).catch(() => {});
           return response;
         })
-        .catch(() => caches.match(FALLBACK_PAGE));
+        .catch(() => (isNavigation ? caches.match(FALLBACK_PAGE) : Response.error()));
     })
   );
 });
