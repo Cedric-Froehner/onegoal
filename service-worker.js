@@ -1,7 +1,8 @@
 const CACHE_NAME = 'onegoal-v1';
+const FALLBACK_PAGE = './Goalcounter.html';
 const ASSETS = [
   './',
-  './Goalcounter.html',
+  FALLBACK_PAGE,
   './css/style.css',
   './js/app.js',
   './manifest.webmanifest',
@@ -35,7 +36,7 @@ self.addEventListener('fetch', event => {
           caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
           return response;
         })
-        .catch(() => caches.match('./Goalcounter.html'));
+        .catch(() => caches.match(FALLBACK_PAGE));
     })
   );
 });

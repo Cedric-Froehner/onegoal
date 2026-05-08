@@ -31,7 +31,7 @@ Für die Installation und den Vollbildmodus unter Android müssen folgende Bedin
 
 - Gültiges `manifest.webmanifest`
 - Registrierter `service-worker.js`
-- Bereitstellung über **HTTPS** (oder lokal via `localhost` für Entwicklung)
+- Bereitstellung über **HTTPS** (oder lokal via `localhost` / `127.0.0.1` für Entwicklung)
 
 ### Spielablauf
 
